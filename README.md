@@ -1,3 +1,4 @@
 # ZendProject
-An example project built with the Zend 2 framework for learning for a work project. Zend 3 is available at the time of 
-this repo creation but version 2 is needed for the work project.  
+This project was built from the Pluralsight course: Building PHP Applications with Zend Framework 2 to learn how to use 
+the Zend Framework for a work project. 
+  
