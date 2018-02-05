@@ -1,1 +1,18 @@
-In add.phtml
+<?php
+
+$title = 'Add new book';
+$this->headTitle($title);
+?>
+
+<h1>Add a new book</h1>
+
+<?php
+$form->setAttribute('action', $this->url('book', ['action' => 'add']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('title'));
+echo $this->formRow($form->get('author'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
