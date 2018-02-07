@@ -1,7 +1,30 @@
-zf:
-  build: .
-  dockerfile: Dockerfile
-  ports:
-   - "8080:80"
-  volumes:
-   - .:/var/www
+version: '3.1'
+
+services:
+
+  zf:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www
+    networks:
+      - zend-test-network
+
+  mysql-db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user1
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: testing
+
+    networks:
+      - zend-test-network
+
+networks:
+  zend-test-network:
+    driver: bridge
