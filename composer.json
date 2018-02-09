@@ -16,7 +16,8 @@
         "zfcampus/zf-development-mode": "^3.0",
         "zendframework/zend-i18n": "^2.7",
         "zendframework/zend-form": "^2.11",
-        "doctrine/migrations": "^1.5"
+        "doctrine/migrations": "^1.5",
+        "doctrine/doctrine-orm-module": "^1.1"
     },
     "autoload": {
         "psr-4": {
