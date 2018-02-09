@@ -11,6 +11,28 @@
  * file.
  */
 
+use Doctrine\DBAL\Driver\PDOMySql\Driver as PDOMySqlDriver;
+
 return [
-    // ...
+    'doctrine' => [
+        'connection' => [
+            'orm_default' => [
+                'driverClass' => PDOMySqlDriver::class,
+                'params' => [
+                    'host'     => 'mysql-db',
+                    'user'     => 'user1',
+                    'password' => 'password',
+                    'dbname'   => 'testing',
+                ]
+            ],
+        ],
+        'migrations_configuration' => [
+            'orm_default' => [
+                'directory' => 'data/migrations',
+                'name'      => 'Doctrine Database Migrations',
+                'namespace' => 'Migrations',
+                'table'     => 'migrations',
+            ],
+        ],
+    ],
 ];
